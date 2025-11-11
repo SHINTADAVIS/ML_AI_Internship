@@ -23,89 +23,92 @@ It is implemented in **Google Colab**, utilizing **Google Drive** for dataset st
  # Workflow
  
  ### 1. Mount Google Drive
- # Access the image dataset from Google Drive:
+ #### Access the image dataset from Google Drive:
 
-from google.colab import drive
-drive.mount('/content/drive')
-filename = '/content/drive/MyDrive/Test_image.png'
+    from google.colab import drive
+    drive.mount('/content/drive')
+    filename = '/content/drive/MyDrive/Test_image.png'
 
-### 2. Image Preprocessing
+#### 2. Image Preprocessing
 
-### Enhance the image for better OCR accuracy:
-import cv2, numpy as np
-img = cv2.imread(filename)
-img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-kernel = np.ones((1, 1), np.uint8)
-img = cv2.dilate(img, kernel, iterations=1)
-img = cv2.erode(img, kernel, iterations=1)
-cv2.imwrite("removed_noise.png", img)
+#### Enhance the image for better OCR accuracy:
+    import cv2, numpy as np
+    img = cv2.imread(filename)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    kernel = np.ones((1, 1), np.uint8)
+    img = cv2.dilate(img, kernel, iterations=1)
+    img = cv2.erode(img, kernel, iterations=1)
+    cv2.imwrite("removed_noise.png", img)
 
-### 3.Text Extraction using Tesseract
+#### 3.Text Extraction using Tesseract
 
-from PIL import Image
-import pytesseract
+   from PIL import Image
+   import pytesseract
 
-def get_string(img_path):
-    return pytesseract.image_to_string(Image.open(img_path))
+      def get_string(img_path):
+      return pytesseract.image_to_string(Image.open(img_path))
 
-text = get_string(filename)
-print("Recognized Text:\n", text)
+    text = get_string(filename)
+    print("Recognized Text:\n", text)
 
-### 4. Generate PDF of Recognized Text
+#### 4. Generate PDF of Recognized Text
 
-from fpdf import FPDF
-pdf = FPDF(format='letter')
-pdf.add_page()
-pdf.set_font("Arial", size=12)
-pdf.write(5, text)
-pdf.output("Recognized_Text.pdf")
+    from fpdf import FPDF
+    pdf = FPDF(format='letter')
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    pdf.write(5, text)
+    pdf.output("Recognized_Text.pdf")
 
-### 5. Accuracy Evaluation
+#### 5. Accuracy Evaluation
 
-from difflib import SequenceMatcher
+    from difflib import SequenceMatcher
 
-ground_truth = "PRESIDENT KENNEDY TODAY"
-def similar(a, b):
-    return str(SequenceMatcher(None, a, b).ratio() * 100) + "%"
+    ground_truth = "PRESIDENT KENNEDY TODAY"
+    def similar(a, b):
+         return str(SequenceMatcher(None, a, b).ratio() * 100) + "%"
 
-accuracy = similar(ground_truth, text)
-print("Recognition Accuracy:", accuracy)
+    accuracy = similar(ground_truth, text)
+    print("Recognition Accuracy:", accuracy)
 
-### Dataset Details
-Type: Handwritten text images
-Format: PNG/JPEG
-Source: Custom uploaded image (Test_image.png) from Google Drive
+#### Dataset Details
+   Type: Handwritten text images  
+   Format: PNG/JPEG  
+   Source: Custom uploaded image (Test_image.png) from Google Drive  
 
-## Content Example: Handwritten phrase "PRESIDENT KENNEDY TODAY"
+#### Content Example: 
+Handwritten phrase "PRESIDENT KENNEDY TODAY"  
 
-## To enhance performance, you can expand this dataset with more samples of different handwriting styles and qualities.
+To enhance performance, you can expand this dataset with more samples of different handwriting styles and qualities.  
 
-## Example Output
-## Input Image (Expected Text):
+#### Example Output
+
+#### Input Image (Expected Text):
 PRESIDENT KENNEDY TODAY
 
-## Recognized Output:
+#### Recognized Output:
 “PRESIDENI KENNEDY botany
 
-## Recognition Accuracy:
+#### Recognition Accuracy:
 68.0%
 
-### Installation & Requirements
-## Install all required dependencies:
+#### Installation & Requirements
 
-!apt install tesseract-ocr
-!pip install pytesseract opencv-python pillow fpdf
+Install all required dependencies:  
 
-## Confirm Tesseract installation:
-!tesseract --version
+    !apt install tesseract-ocr
+    !pip install pytesseract opencv-python pillow fpdf
 
-## Future Enhancements
+#### Confirm Tesseract installation:
+    !tesseract --version
 
-# Integration of deep learning-based OCR models (e.g., CRNN, TrOCR, EasyOCR)
+### Future Enhancements
 
-# Dataset expansion with labeled handwritten text samples
+    Integration of deep learning-based OCR models (e.g., CRNN, TrOCR, EasyOCR)  
 
-# GUI interface for real-time handwritten text recognition
+    Dataset expansion with labeled handwritten text samples  
 
-# Multi-language handwriting support
+    GUI interface for real-time handwritten text recognition  
+
+    Multi-language handwriting support  
 

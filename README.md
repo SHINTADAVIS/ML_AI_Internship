@@ -23,7 +23,7 @@ It is implemented in **Google Colab**, utilizing **Google Drive** for dataset st
  # Workflow
  
  ### 1. Mount Google Drive
- Access the image dataset from Google Drive:
+ # Access the image dataset from Google Drive:
 
 from google.colab import drive
 drive.mount('/content/drive')

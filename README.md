@@ -104,11 +104,11 @@ Install all required dependencies:
 
 ### Future Enhancements
 
-    Integration of deep learning-based OCR models (e.g., CRNN, TrOCR, EasyOCR)  
+Integration of deep learning-based OCR models (e.g., CRNN, TrOCR, EasyOCR)    
 
-    Dataset expansion with labeled handwritten text samples  
+Dataset expansion with labeled handwritten text samples    
 
-    GUI interface for real-time handwritten text recognition  
+GUI interface for real-time handwritten text recognition    
 
-    Multi-language handwriting support  
+Multi-language handwriting support    
 

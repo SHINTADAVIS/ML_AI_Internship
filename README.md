@@ -14,16 +14,16 @@ Key features:
 - Extracts text using Tesseract OCR.
 - Calculates accuracy against expected text.
 - Exports recognized text as a PDF.
-- 
+ 
 ## Installation
 
 1. Clone the repository:
 
-git clone https://github.com/SHINTADAVIS/ML_AI_Internship.git
-cd ML_AI_Internship
+''' git clone https://github.com/SHINTADAVIS/ML_AI_Internship.git
+cd ML_AI_Internship '''
 
 **2. Install Python dependencies**
-pip install -r requirements.txt
+''' pip install -r requirements.txt '''
 
 **3. Install Tesseract OCR engine**
 

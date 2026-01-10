@@ -21,7 +21,7 @@ Key features:
 
 ```bash
 git clone https://github.com/SHINTADAVIS/ML_AI_Internship.git
-cd ML_AI_Internship  
+cd ML_AI_Internship
 
 2. Install Python dependencies
 pip install -r requirements.txt

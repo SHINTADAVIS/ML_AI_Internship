@@ -17,26 +17,25 @@ Key features:
 - 
 ## Installation
 
-***1. Clone the repository:**
+1. Clone the repository:
 
-```bash
 git clone https://github.com/SHINTADAVIS/ML_AI_Internship.git
 cd ML_AI_Internship
 
-***2. Install Python dependencies***
+**2. Install Python dependencies**
 pip install -r requirements.txt
 
-***3. Install Tesseract OCR engine***
+**3. Install Tesseract OCR engine**
 
-***Ubuntu / Linux***
+**Ubuntu / Linux**
 sudo apt install tesseract-ocr
 
-***Windows***
+**Windows**
 
 Download installer from Tesseract GitHub
 Add Tesseract to your system PATH
 
-***Usage***
+**Usage**
 Run the Python script:
 python src/ocr.py
 

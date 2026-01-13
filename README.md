@@ -1,7 +1,7 @@
 # Automate Extraction of Handwritten Text from an Image
 
 **TCS iON Remote Internship RIO-125**  
-Project developed as part of the **Certified Specialist in Machine Learning and Artificial Intelligence** program by **ICT Academy of Kerala** in association with **Kerala Knowledge Economy Mission (KKEM)**.
+Project developed as part of the **Certified Specialist in Machine Learning and Artificial Intelligence** program from **ICT Academy of Kerala** in association with **Kerala Knowledge Economy Mission (KKEM)**.
 
 ---
 
